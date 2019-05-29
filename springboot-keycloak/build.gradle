@@ -1,0 +1,35 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.5.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	// Spring
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-devtools'
+
+	implementation('org.springframework.boot:spring-boot-starter-security')
+	implementation('org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.0.1.RELEASE')
+	implementation('org.springframework.boot:spring-boot-configuration-processor')
+
+	implementation('org.springframework.boot:spring-boot-starter-test')
+	implementation('org.springframework.security:spring-security-test')
+	// Test
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	implementation('org.projectlombok:lombok')
+}
